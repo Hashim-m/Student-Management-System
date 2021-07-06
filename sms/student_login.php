@@ -9,11 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
   <body>
+  <div class="position-absolute top-50 start-50 translate-middle">
    <h1>Students_Login</h1>
     <form action="" method="post" >
             <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
             <input type="email" name="email"  placeholder="email@example.com"><br><br>
-            <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+            <label for="exampleDropdownFormPassword2" class="form-label">Password&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
             <input type="password"  name="password" placeholder="Password"><br><br>
             <input type="submit" name="submit" class="btn btn-primary">
     </form><br>
@@ -45,5 +46,6 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   </div> 
   </body>
 </html> 

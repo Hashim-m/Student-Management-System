@@ -15,66 +15,69 @@
     ?>
   </head>
   <body>
+  <nav class="navbar navbar-dark bg-dark">
+      <h4 class="navbar-brand">&nbsp&nbsp Loged in :<?php  echo $_SESSION['email'];?></h4>
+      <h4 class="navbar-brand">Name :<?php  echo $_SESSION['name'];?></h4>
+      <a href="logout.php" class="navbar-brand">Log out</a>
+  </nav>
+  <div class="container">
   <h1>STUDENT INFORMATION SYSTEM STUDENT DASHBOARD</h1>
-  <div>
-      <h4>Loged in :<?php  echo $_SESSION['email'];?></h4>
-      <h4>Name :<?php  echo $_SESSION['name'];?></h4>
-      <a href="logout.php">Log out</a>
-  </div>
- <div id="left_side">
+  <table class="table table-borderless">
    <form action="" method="post">
-    <table class="table">
+    
       <tr>
-            <td> <input type="submit" name="show_details" value="Student Profile"></td>
+            <td> <input class="btn btn-primary" type="submit" name="show_details" value="Student Profile"></td>
       </tr>
       <tr>
-            <td> <input type="submit" name="edit_details" value="Edit Details"></td>
+            <td> <input class="btn btn-primary" type="submit" name="edit_details" value="Edit Details &nbsp&nbsp&nbsp&nbsp&nbsp"></td>
       </tr>
      
-    </table>
+    
    </form>
-</div>
-<div>
+   </table>
+
 <!-- Stdent profile -->
+<div>
 <br>
 <br>
-<h1>STUDENT PROFILE</h1>
 <table class="table">
 
  <?php
    if(isset($_POST['show_details'])){
-       ?>
-    <thead>
-    <tr>
-    <th>Roll_No</th>
-    <th>Name</th>
-    <th>Class</th>
-    <th>Teacher_Name</th>
-    <th>Mobail Number</th>
-    <th>Email</th>
-    </tr>
-    </thead>
-    <?php
     $selectquery="select * from students where email='$_SESSION[email]'";
     $students=mysqli_query($conn,$selectquery);
     foreach($students as $student) {
     ?>
-    
-    <tbody>
+    <h1>STUDENT PROFILE</h1>
       <tr>
+        <td>Roll_No</td>
         <td><?php echo $student['roll_no']; ?></td>
+      </tr>
+      <tr> 
+        <td>Name</td> 
         <td><?php echo $student['name']; ?></td>
+      </tr>  
+      <tr> 
+        <td>Class</td>
         <td><?php echo $student['class']; ?></td>
+      </tr>  
+      <tr> 
+        <td>Teacher_Name</td>  
         <td><?php echo $student['teacher_name']; ?></td>
+      </tr>  
+      <tr> 
+        <td>Mobail Number</td>
         <td><?php echo $student['mobail_no']; ?></td>
+      </tr>  
+      <tr> 
+        <td>Email</td>
         <td><?php echo $student['email']; ?></td>
-    </tr>
+      </tr>
      
     <?php
     }
-   }
-   ?>
-</tbody>   
+}
+   ?> 
 </table>   
 </div>
 
@@ -132,6 +135,6 @@
      ?>
    </div>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+ </div>
   </body>
 </html>
